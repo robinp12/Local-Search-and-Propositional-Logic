@@ -18,8 +18,10 @@ executable -- name of the MiniSat executable to run
 Example:
 Consider a vocabulary with 3 variables A, B, C and the clauses !A || B,
 !B || !C and A.
+-(avb) ^ (b v -c)
 
->>> minisat(3, [(-1, 2), (-2, -3), (1,)])
+
+>>> minisat(3, [(-1, -2), (2, -3)])
 [1, 2]
 
 meaning the clauses are satisfiable and {A=True, B=True, C=False} is a

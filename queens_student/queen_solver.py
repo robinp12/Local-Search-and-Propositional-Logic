@@ -18,8 +18,11 @@ Read the comment on top of clause.py to see how this works.
 
 def get_expression(size, queens=None):
     expression = []
-    # your code here
-
+    for position in queens:
+        clause = Clause(size)
+        clause.add_positive(position[0],position[1])
+        print("clause",clause,": minisat",clause.minisat_str())
+        expression.append(clause)
     return expression
 
 
